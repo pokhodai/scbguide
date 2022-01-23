@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">scbguide</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Main Screen-->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main.Title">Добро пожаловать в справочник!</string>
+    <string name="main.SubTitle"><b>+150</b> устройств</string>
 </resources>

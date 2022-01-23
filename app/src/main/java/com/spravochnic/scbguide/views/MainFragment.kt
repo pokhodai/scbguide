@@ -5,13 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.spravochnic.scbguide.R
-import com.spravochnic.scbguide.databinding.ActivityMainBinding
+import androidx.fragment.app.viewModels
 import com.spravochnic.scbguide.databinding.FragmentMainBinding
+import com.spravochnic.scbguide.viewModels.MainViewModel
 
 class MainFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
+
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
