@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/corner20"
+    app:cardBackgroundColor="@color/white"
+    app:rippleColor="@color/main_blue"
+    android:layout_marginBottom="@dimen/margin21"
+    android:layout_marginHorizontal="@dimen/margin16"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_icon_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin19"
+            android:layout_marginStart="@dimen/margin28"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_test"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_name_main"
+            style="@style/DarkBold15TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin42"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Лекторий"
+            app:layout_constraintStart_toEndOf="@+id/iv_icon_main"
+            app:layout_constraintTop_toTopOf="@+id/iv_icon_main" />
+
+        <TextView
+            android:id="@+id/tv_topics_main"
+            style="@style/NeutralNormal13TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_icon_main"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name_main"
+            app:layout_constraintStart_toStartOf="@+id/tv_name_main"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_main"
+            tools:text="14 тем" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

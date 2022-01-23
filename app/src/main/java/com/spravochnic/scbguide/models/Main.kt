@@ -1,25 +1,21 @@
 package com.spravochnic.scbguide.models
 
-import com.spravochnic.scbguide.api.response.MainResponse
+import com.spravochnic.scbguide.R
 
 data class Main(
     val id: Int,
-    val icon: String,
+    val icon: Int,
     val name: String,
+    val topic: String,
     val type: Int,
     val viewType: Int
 )
 
-fun List<MainResponse.Main>?.toMain(): List<Main> {
-    return this?.map { main ->
-        Main(-1, "", "", -1, 1)
-        Main(
-            id = main.id ?: 0,
-            icon = main.icon ?: "",
-            name = main.name ?: "",
-            type = main.type ?: 0,
-            viewType = main.viewType ?: 2
-        )
-    } ?: listOf()
+fun getMainCategories(): List<Main>{
+    return listOf(
+        Main(-1, 0, "", "", -1, 1),
+        Main(1, R.drawable.ic_lectory, "Лекторий", "14", 1, 2),
+        Main(2, R.drawable.ic_test, "Проверь себя", "14", 2, 2),
+    )
 }
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/corner14"
+    android:layout_marginHorizontal="@dimen/margin16"
+    android:layout_marginBottom="@dimen/margin38"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/main_blue">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_title_tip"
+            style="@style/WhiteBold14TextStyle"
+            android:layout_width="0dp"
+            android:text="@string/main.tipTitle"
+            android:layout_marginTop="@dimen/margin10"
+            android:layout_marginHorizontal="@dimen/margin23"
+            android:gravity="left|center"
+            android:drawablePadding="@dimen/padding5"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableStartCompat="@drawable/ic_lamp"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/iv_man_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin22"
+            android:src="@drawable/ic_human"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_tip"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_subTitle_tip"
+            style="@style/WhiteNormal12TextStyle"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/margin10"
+            android:text="@string/main.tipSubTitle"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/iv_man_tip"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_tip"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_tip" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

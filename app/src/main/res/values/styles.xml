@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/main_screen_color</item>
+        <item name="titleCentered">true</item>
+        <item name="subtitleCentered">true</item>
+        <item name="android:elevation">0dp</item>
+        <item name="titleTextAppearance">@style/TitleTextAppearance</item>
+    </style>
+
+    <style name="CollapsingToolbarTextAppearanceStyle">
+        <item name="android:textColor">@color/main_blue</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TitleTextAppearance">
+        <item name="android:textSize">@dimen/size16</item>
+        <item name="android:textColor">@color/main_blue</item>
+    </style>
+
     <style name="BaseDarkBoldTextStyle">
-        <item name="fontFamily">@font/font_semi_bold</item>
         <item name="lineHeight">22sp</item>
         <item name="android:textColor">@color/main_dark</item>
         <item name="android:textStyle">bold</item>
@@ -16,12 +33,49 @@
         <item name="fontWeight">400</item>
     </style>
 
+    <style name="BaseWhiteBoldTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="lineHeight">22sp</item>
+        <item name="fontWeight">600</item>
+    </style>
+
+    <style name="BaseWhiteNormalTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="lineHeight">20sp</item>
+        <item name="fontWeight">400</item>
+    </style>
+
+    <style name="BaseNeutralNormalTextStyle">
+        <item name="android:textColor">@color/main_neutral</item>
+        <item name="android:textStyle">normal</item>
+        <item name="lineHeight">22sp</item>
+        <item name="fontWeight">400</item>
+    </style>
+
     <style name="DarkBold16TextStyle" parent="BaseDarkBoldTextStyle">
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="DarkBold15TextStyle" parent="BaseDarkBoldTextStyle">
+        <item name="android:textSize">15sp</item>
+    </style>
+
     <style name="BlueNormal14TextStyle" parent="BaseBlueNormalTextStyle">
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="WhiteBold14TextStyle" parent="BaseWhiteBoldTextStyle">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="WhiteNormal12TextStyle" parent="BaseWhiteNormalTextStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="NeutralNormal13TextStyle" parent="BaseNeutralNormalTextStyle">
+        <item name="android:textSize">13sp</item>
     </style>
 
 </resources>

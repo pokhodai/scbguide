@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin6">6dp</dimen>
-    <dimen name="margin18">18dp</dimen>
-    <dimen name="margin30">30dp</dimen>
 
+    <!-- Margin-->
+    <dimen name="margin6">6dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin11">11dp</dimen>
+    <dimen name="margin12">12dp</dimen>
+    <dimen name="margin16">16dp</dimen>
+    <dimen name="margin18">18dp</dimen>
+    <dimen name="margin19">19dp</dimen>
+    <dimen name="margin21">21dp</dimen>
+    <dimen name="margin22">22dp</dimen>
+    <dimen name="margin23">23dp</dimen>
+    <dimen name="margin28">28dp</dimen>
+    <dimen name="margin30">30dp</dimen>
+    <dimen name="margin38">38dp</dimen>
+    <dimen name="margin42">42dp</dimen>
+
+    <!-- Padding-->
+    <dimen name="padding5">5dp</dimen>
     <dimen name="padding11">11dp</dimen>
     <dimen name="padding33">33dp</dimen>
+
+    <!-- Corner-->
+    <dimen name="corner14">14dp</dimen>
+    <dimen name="corner20">20dp</dimen>
+
+    <!-- Size-->
+    <dimen name="size16">16sp</dimen>
 </resources>
