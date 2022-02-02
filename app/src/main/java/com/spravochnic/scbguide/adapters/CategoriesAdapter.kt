@@ -101,6 +101,4 @@ class CategoriesAdapter: ListAdapter<Categories, CategoriesAdapter.CategoryViewH
         override fun areItemsTheSame(oldItem: Categories, newItem: Categories): Boolean { return oldItem.id == newItem.id }
         override fun areContentsTheSame(oldItem: Categories, newItem: Categories): Boolean { return oldItem == newItem }
     }
-
-
 }

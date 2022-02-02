@@ -50,6 +50,8 @@ class MainFragment : Fragment() {
     private val onClickMain: (Int) -> Unit = { type ->
         if (type == 1) {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToCategoriesFragment())
+        } else if (type == 2) {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToTestCategoriesFragment())
         }
     }
 

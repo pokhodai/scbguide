@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/corner20"
+    app:cardElevation="0dp"
+    android:layout_marginBottom="@dimen/margin21"
+    android:layout_marginHorizontal="@dimen/margin19"
+    android:layout_height="@dimen/height106">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_test_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_beginner"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_name_test_categories"
+            style="@style/LightNeutralNormal18TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin10"
+            android:layout_marginTop="@dimen/margin25"
+            android:layout_marginStart="@dimen/margin96"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Легкий уровень"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_question_test_categories"
+            style="@style/NeutralNormal13TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="30 вопросов"
+            android:layout_marginTop="@dimen/margin6"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name_test_categories"
+            app:layout_constraintStart_toStartOf="@+id/tv_name_test_categories"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_test_categories" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

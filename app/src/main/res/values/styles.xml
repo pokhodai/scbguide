@@ -54,6 +54,17 @@
         <item name="fontWeight">400</item>
     </style>
 
+    <style name="BaseLightNeutralNormalTextStyle">
+        <item name="android:textColor">@color/light_neutral</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontWeight">500</item>
+        <item name="lineHeight">22sp</item>
+    </style>
+
+    <style name="LightNeutralNormal18TextStyle" parent="BaseLightNeutralNormalTextStyle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="DarkBold16TextStyle" parent="BaseDarkBoldTextStyle">
         <item name="android:textSize">16sp</item>
     </style>

@@ -17,6 +17,13 @@
             app:popExitAnim="@anim/fragment_exit"
             app:enterAnim="@anim/fragment_enter"
             app:exitAnim="@anim/fragment_exit"/>
+        <action
+            android:id="@+id/action_mainFragment_to_testCategoriesFragment"
+            app:destination="@id/testCategoriesFragment"
+            app:popEnterAnim="@anim/fragment_enter"
+            app:popExitAnim="@anim/fragment_exit"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"/>
     </fragment>
 
     <fragment
@@ -24,6 +31,12 @@
         android:name="com.spravochnic.scbguide.views.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories" />
+
+    <fragment
+        android:id="@+id/testCategoriesFragment"
+        android:name="com.spravochnic.scbguide.views.TestCategoriesFragment"
+        android:label="fragment_test_categories"
+        tools:layout="@layout/fragment_test_categories" />
 
 
 </navigation>

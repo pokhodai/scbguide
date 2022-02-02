@@ -5,11 +5,12 @@
     <string name="buttonOk">Ок</string>
 
     <!-- Main Screen-->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main.Title">Добро пожаловать в справочник!</string>
     <string name="main.SubTitle"><b>+150</b> устройств</string>
     <string name="main.tipTitle">Совет по изучению устройств</string>
     <string name="main.tipSubTitle">По очередности изучай все темы. Когда все темы будут изучены проверь свои знания на тестах, повышай уровень сложности по мере исчезновения ошибок!</string>
     <string name="main.tip">%s тем</string>
 
+    <!-- Test Screen-->
+    <string name="test.question">%s вопросов</string>
 </resources>

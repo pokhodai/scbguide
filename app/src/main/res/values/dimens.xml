@@ -12,10 +12,12 @@
     <dimen name="margin21">21dp</dimen>
     <dimen name="margin22">22dp</dimen>
     <dimen name="margin23">23dp</dimen>
+    <dimen name="margin25">25dp</dimen>
     <dimen name="margin28">28dp</dimen>
     <dimen name="margin30">30dp</dimen>
     <dimen name="margin38">38dp</dimen>
     <dimen name="margin42">42dp</dimen>
+    <dimen name="margin96">96dp</dimen>
 
     <!-- Padding-->
     <dimen name="padding5">5dp</dimen>
@@ -28,4 +30,7 @@
 
     <!-- Size-->
     <dimen name="size16">16sp</dimen>
+
+    <!-- Height-->
+    <dimen name="height106">106dp</dimen>
 </resources>
