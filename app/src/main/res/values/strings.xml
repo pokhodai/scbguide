@@ -13,4 +13,10 @@
 
     <!-- Test Screen-->
     <string name="test.question">%s вопросов</string>
+
+    <!-- Details Categories Screen-->
+    <string name="detailsCategories.description">Описание</string>
+    <string name="detailsCategories.seeAll">Смотреть полностью</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -2,13 +2,17 @@
 <resources>
 
     <!-- Margin-->
+    <dimen name="margin5">5dp</dimen>
     <dimen name="margin6">6dp</dimen>
     <dimen name="margin10">10dp</dimen>
     <dimen name="margin11">11dp</dimen>
     <dimen name="margin12">12dp</dimen>
+    <dimen name="margin15">15dp</dimen>
     <dimen name="margin16">16dp</dimen>
+    <dimen name="margin17">17dp</dimen>
     <dimen name="margin18">18dp</dimen>
     <dimen name="margin19">19dp</dimen>
+    <dimen name="margin20">20dp</dimen>
     <dimen name="margin21">21dp</dimen>
     <dimen name="margin22">22dp</dimen>
     <dimen name="margin23">23dp</dimen>
@@ -17,6 +21,7 @@
     <dimen name="margin30">30dp</dimen>
     <dimen name="margin38">38dp</dimen>
     <dimen name="margin42">42dp</dimen>
+    <dimen name="margin80">80dp</dimen>
     <dimen name="margin96">96dp</dimen>
 
     <!-- Padding-->
@@ -26,11 +31,14 @@
 
     <!-- Corner-->
     <dimen name="corner14">14dp</dimen>
+    <dimen name="corner15">15dp</dimen>
     <dimen name="corner20">20dp</dimen>
 
     <!-- Size-->
+    <dimen name="size15">15sp</dimen>
     <dimen name="size16">16sp</dimen>
 
     <!-- Height-->
     <dimen name="height106">106dp</dimen>
+    <dimen name="height167">167dp</dimen>
 </resources>

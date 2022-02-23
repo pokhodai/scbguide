@@ -3,6 +3,7 @@ package com.spravochnic.scbguide.api
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.spravochnic.scbguide.BuildConfig
 import com.spravochnic.scbguide.api.response.CategoriesResponse
+import com.spravochnic.scbguide.api.response.DetailsCategoriesResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -18,6 +19,9 @@ interface ApiService {
 
     @GET("instruments/getCategoriesLectory.php")
     suspend fun getCategoriesLectory(): CategoriesResponse
+
+    @GET("instruments/lectory.php")
+    suspend fun getDetailCategoriesLectory(): DetailsCategoriesResponse
 
     companion object {
 

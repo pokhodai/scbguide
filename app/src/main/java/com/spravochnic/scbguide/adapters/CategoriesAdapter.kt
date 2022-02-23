@@ -7,25 +7,25 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.spravochnic.scbguide.*
 import com.spravochnic.scbguide.databinding.ViewCategoryBinding
-import com.spravochnic.scbguide.databinding.ViewMainBinding
 import com.spravochnic.scbguide.models.Categories
-import com.spravochnic.scbguide.models.Main
 
-class CategoriesAdapter: ListAdapter<Categories, CategoriesAdapter.CategoryViewHolder>(CategoriesDiffUtilCallback()) {
+class CategoriesAdapter(
+    private val onClickCategory: (String) -> Unit = {},
+) : ListAdapter<Categories, CategoriesAdapter.CategoryViewHolder>(CategoriesDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         return CategoryViewHolder.getViewHolder(parent)
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onClickCategory)
     }
 
     class CategoryViewHolder(
-        private val binding: ViewCategoryBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+        private val binding: ViewCategoryBinding,
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Categories) {
+        fun bind(item: Categories, onClickCategory: (String) -> Unit) {
             binding.apply {
                 tvNameCategory.text = item.name
                 tvTopicsMain.text = root.context.getString(
@@ -33,6 +33,9 @@ class CategoriesAdapter: ListAdapter<Categories, CategoriesAdapter.CategoryViewH
                     item.numbers
                 )
                 ivIconCategory.setImageResource(getIconCategory(item.type))
+                root.setOnClickListener {
+                    onClickCategory(item.type)
+                }
             }
         }
 
@@ -86,7 +89,7 @@ class CategoriesAdapter: ListAdapter<Categories, CategoriesAdapter.CategoryViewH
 
         companion object {
             fun getViewHolder(parent: ViewGroup): CategoryViewHolder {
-                val binding =  ViewCategoryBinding.inflate(
+                val binding = ViewCategoryBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
@@ -98,7 +101,12 @@ class CategoriesAdapter: ListAdapter<Categories, CategoriesAdapter.CategoryViewH
     }
 
     class CategoriesDiffUtilCallback : DiffUtil.ItemCallback<Categories>() {
-        override fun areItemsTheSame(oldItem: Categories, newItem: Categories): Boolean { return oldItem.id == newItem.id }
-        override fun areContentsTheSame(oldItem: Categories, newItem: Categories): Boolean { return oldItem == newItem }
+        override fun areItemsTheSame(oldItem: Categories, newItem: Categories): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: Categories, newItem: Categories): Boolean {
+            return oldItem == newItem
+        }
     }
 }

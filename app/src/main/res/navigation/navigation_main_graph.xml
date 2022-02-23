@@ -30,13 +30,35 @@
         android:id="@+id/categoriesFragment"
         android:name="com.spravochnic.scbguide.views.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_categoriesFragment_to_detailsCategoriesFragment"
+            app:destination="@id/detailsCategoriesFragment" />
+
+        <argument
+            android:name="type"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/testCategoriesFragment"
         android:name="com.spravochnic.scbguide.views.TestCategoriesFragment"
         android:label="fragment_test_categories"
         tools:layout="@layout/fragment_test_categories" />
+
+    <fragment
+        android:id="@+id/detailsCategoriesFragment"
+        android:name="com.spravochnic.scbguide.views.DetailCategoryFragment"
+        android:label="fragment_details_category"
+        tools:layout="@layout/fragment_detail_category" >
+
+        <argument
+            android:name="type"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
 
 
 </navigation>

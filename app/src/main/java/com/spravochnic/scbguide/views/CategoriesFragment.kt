@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.spravochnic.scbguide.DefaultNetworkEventObserver
 import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.adapters.CategoriesAdapter
 import com.spravochnic.scbguide.adapters.MainAdapter
 import com.spravochnic.scbguide.databinding.FragmentCategoriesBinding
 import com.spravochnic.scbguide.databinding.FragmentMainBinding
+import com.spravochnic.scbguide.viewModels.DetailCategoryViewModel
 import com.spravochnic.scbguide.viewModels.MainViewModel
 
 class CategoriesFragment : Fragment() {
@@ -22,10 +24,12 @@ class CategoriesFragment : Fragment() {
     private lateinit var binding: FragmentCategoriesBinding
 
     private val viewModel: MainViewModel by activityViewModels()
+    private val detailViewModel: DetailCategoryViewModel by activityViewModels()
+    private val args: CategoriesFragmentArgs by navArgs()
     private lateinit var onCategoriesResult: DefaultNetworkEventObserver
 
     private val categoryAdapter by lazy {
-        CategoriesAdapter()
+        CategoriesAdapter(onClickCategory = onClickCategory)
     }
 
     override fun onCreateView(
@@ -38,6 +42,7 @@ class CategoriesFragment : Fragment() {
         setObservers()
         initAdapter()
         setListeners()
+        loadDetailsCategories()
     }.root
 
     private fun setListeners() {
@@ -46,6 +51,11 @@ class CategoriesFragment : Fragment() {
                 findNavController().popBackStack()
             }
         }
+    }
+
+    private fun loadDetailsCategories() {
+        detailViewModel.loadDetailsCategoriesData()
+        Log.d("TagTag", "tag"+detailViewModel.detail.value)
     }
 
     private fun initAdapter() {
@@ -64,7 +74,6 @@ class CategoriesFragment : Fragment() {
             doOnSuccess = {
                 viewModel.categories.value?.let {
                     categoryAdapter.submitList(it)
-
                 }
             },
             doOnError = {
@@ -74,5 +83,11 @@ class CategoriesFragment : Fragment() {
                 findNavController().popBackStack()
             }
         )
+    }
+
+    private val onClickCategory: (String) -> Unit = { type ->
+        val bundle = Bundle()
+        bundle.putString(DetailCategoryFragment.TYPE, type)
+        findNavController().navigate(R.id.action_categoriesFragment_to_detailsCategoriesFragment, bundle)
     }
 }
