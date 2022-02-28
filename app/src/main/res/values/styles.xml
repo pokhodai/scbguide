@@ -25,6 +25,7 @@
 
     <style name="TitleTextAppearance">
         <item name="android:textSize">@dimen/size16</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/main_blue</item>
     </style>
 

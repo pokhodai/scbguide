@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 
 interface ApiService {
 
-    @GET("instruments/lectory.php")
+    @GET("instruments/getCategoriesLectory.php")
     suspend fun getDetailCategoriesLectory(): DetailsCategoriesResponse
 
     companion object {

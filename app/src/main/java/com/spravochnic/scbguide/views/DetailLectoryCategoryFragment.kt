@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.spravochnic.scbguide.DefaultNetworkEventObserver
 import com.spravochnic.scbguide.State
 import com.spravochnic.scbguide.adapters.DetailsCategoryViewPagerAdapter
@@ -25,16 +27,31 @@ class DetailLectoryCategoryFragment : Fragment() {
         DetailsCategoryViewPagerAdapter()
     }
 
+    private val arg: DetailLectoryCategoryFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View = FragmentDetailCategoryBinding.inflate(inflater, container, false).apply {
         binding = this
+        setToolbarTitle()
         initializeObservers()
         setObservers()
         setAdapter()
+        checkIsDataLoaded()
+        setListeners()
     }.root
+
+    private fun setListeners() {
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+    private fun setToolbarTitle() {
+        binding.toolbar.title = detailsLectoryCategoriesViewModel.detailCategory.value?.firstOrNull{it.type == arg.type}?.name
+    }
 
     private fun setAdapter() {
         binding.vpDetail.adapter = detailsCategoryAdapter
@@ -73,15 +90,11 @@ class DetailLectoryCategoryFragment : Fragment() {
         detailsLectoryCategoriesViewModel.detailCategory.value?.let { details ->
             val detailList = mutableListOf<DetailCategory>()
             for (i in details.indices) {
-                if (details[i].type == arguments?.getString(TYPE)) {
+                if (details[i].type == arg.type) {
                     detailList.add(details[i])
                 }
             }
             detailsCategoryAdapter.submitList(detailList)
         }
-    }
-
-    companion object {
-        const val TYPE = "type"
     }
 }

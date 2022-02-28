@@ -22,9 +22,8 @@ class DetailsLectoryCategoriesViewModel: ViewModel() {
         viewModelScope.launch {
             val response = ApiService.API.getDetailCategoriesLectory()
             try {
-
                 if (response.result == "success"){
-                    _detailCategory.value = response.detailsCategories.toDetailCategories()
+                    _detailCategory.value = response.categories.toDetailCategories()
                     _detailCategoryResult.value = NetworkEvent(State.SUCCESS)
                 } else {
                     _detailCategory.value = listOf()

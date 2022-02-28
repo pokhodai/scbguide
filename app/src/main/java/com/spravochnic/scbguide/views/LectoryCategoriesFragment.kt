@@ -38,11 +38,6 @@ class LectoryCategoriesFragment : Fragment() {
     }
 
     private val onClickCategory: (String) -> Unit = { type ->
-        val bundle = Bundle()
-        bundle.putString(DetailLectoryCategoryFragment.TYPE, type)
-        findNavController().navigate(
-            R.id.action_categoriesFragment_to_detailsCategoriesFragment,
-            bundle
-        )
+        findNavController().navigate(LectoryCategoriesFragmentDirections.actionCategoriesFragmentToDetailsCategoriesFragment(type = type))
     }
 }

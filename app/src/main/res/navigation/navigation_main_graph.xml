@@ -33,12 +33,14 @@
         tools:layout="@layout/fragment_categories" >
         <action
             android:id="@+id/action_categoriesFragment_to_detailsCategoriesFragment"
-            app:destination="@id/detailsCategoriesFragment" />
+            app:destination="@id/detailsCategoriesFragment"
+            app:popEnterAnim="@anim/fragment_enter"
+            app:popExitAnim="@anim/fragment_exit"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"/>
 
-        <argument
-            android:name="type"
-            android:defaultValue=""
-            app:argType="string" />
+
+
     </fragment>
 
     <fragment
@@ -55,10 +57,7 @@
 
         <argument
             android:name="type"
-            android:defaultValue=""
             app:argType="string" />
-
     </fragment>
-
 
 </navigation>
