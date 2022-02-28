@@ -78,7 +78,7 @@ fun createSnackbar(
     snackbar.setTextColor(ContextCompat.getColor(App.getInstance(), android.R.color.white))
     snackbar.setActionTextColor(ContextCompat.getColor(App.getInstance(), android.R.color.white))
     val textView =
-        snackbar.view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
+        snackbar.view.findViewById<TextView>(R.id.snackbar_text)
     textView.maxLines = 10
     if (buttonText != null) {
         snackbar.setAction(buttonText) {

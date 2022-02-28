@@ -30,61 +30,13 @@ class CategoriesAdapter(
                 tvNameCategory.text = item.name
                 tvTopicsMain.text = root.context.getString(
                     R.string.main_tip,
-                    item.numbers
+                    item.topic
                 )
-                ivIconCategory.setImageResource(getIconCategory(item.type))
+                ivIconCategory.setImageResource(item.icon)
                 root.setOnClickListener {
                     onClickCategory(item.type)
                 }
             }
-        }
-
-        private fun getIconCategory(type: String): Int {
-            when (type) {
-                trafficlight -> {
-                    return R.drawable.ic_trafficlight
-                }
-                arrowtranslation -> {
-                    return R.drawable.ic_arrowtranslation
-                }
-                box -> {
-                    return R.drawable.ic_box
-                }
-                relay -> {
-                    return R.drawable.ic_relay
-                }
-                railchain -> {
-                    return R.drawable.ic_railchain
-                }
-                centralization -> {
-                    return R.drawable.ic_centralization
-                }
-                alsn -> {
-                    return R.drawable.ic_alsn
-                }
-                edrive -> {
-                    return R.drawable.ic_edrive
-                }
-                gatc -> {
-                    return R.drawable.ic_gatc
-                }
-                transformer -> {
-                    return R.drawable.ic_transformer
-                }
-                aps -> {
-                    return R.drawable.ic_aps
-                }
-                station -> {
-                    return R.drawable.ic_station
-                }
-                bmrc -> {
-                    return R.drawable.ic_bmrc
-                }
-                bridge -> {
-                    return R.drawable.ic_bridge
-                }
-            }
-            return 0
         }
 
         companion object {
@@ -101,12 +53,7 @@ class CategoriesAdapter(
     }
 
     class CategoriesDiffUtilCallback : DiffUtil.ItemCallback<Categories>() {
-        override fun areItemsTheSame(oldItem: Categories, newItem: Categories): Boolean {
-            return oldItem.id == newItem.id
-        }
-
-        override fun areContentsTheSame(oldItem: Categories, newItem: Categories): Boolean {
-            return oldItem == newItem
-        }
+        override fun areItemsTheSame(oldItem: Categories, newItem: Categories): Boolean { return oldItem.id == newItem.id }
+        override fun areContentsTheSame(oldItem: Categories, newItem: Categories): Boolean { return oldItem == newItem }
     }
 }

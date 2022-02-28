@@ -11,15 +11,15 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_categoriesFragment"
-            app:destination="@id/categoriesFragment"
+            android:id="@+id/action_mainFragment_to_testCategoriesFragment"
+            app:destination="@id/testCategoriesFragment"
             app:popEnterAnim="@anim/fragment_enter"
             app:popExitAnim="@anim/fragment_exit"
             app:enterAnim="@anim/fragment_enter"
             app:exitAnim="@anim/fragment_exit"/>
         <action
-            android:id="@+id/action_mainFragment_to_testCategoriesFragment"
-            app:destination="@id/testCategoriesFragment"
+            android:id="@+id/action_mainFragment_to_lectoryCategoriesFragment"
+            app:destination="@id/lectoryCategoriesFragment"
             app:popEnterAnim="@anim/fragment_enter"
             app:popExitAnim="@anim/fragment_exit"
             app:enterAnim="@anim/fragment_enter"
@@ -27,8 +27,8 @@
     </fragment>
 
     <fragment
-        android:id="@+id/categoriesFragment"
-        android:name="com.spravochnic.scbguide.views.CategoriesFragment"
+        android:id="@+id/lectoryCategoriesFragment"
+        android:name="com.spravochnic.scbguide.views.LectoryCategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories" >
         <action
@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/detailsCategoriesFragment"
-        android:name="com.spravochnic.scbguide.views.DetailCategoryFragment"
+        android:name="com.spravochnic.scbguide.views.DetailLectoryCategoryFragment"
         android:label="fragment_details_category"
         tools:layout="@layout/fragment_detail_category" >
 

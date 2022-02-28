@@ -1,32 +1,26 @@
 package com.spravochnic.scbguide.views
 
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.adapters.MainAdapter
+import com.spravochnic.scbguide.adapters.MainItem
 import com.spravochnic.scbguide.databinding.FragmentMainBinding
 import com.spravochnic.scbguide.models.Main
 import com.spravochnic.scbguide.models.getMainCategories
-import com.spravochnic.scbguide.viewModels.MainViewModel
+import com.spravochnic.scbguide.viewModels.DetailsLectoryCategoriesViewModel
 
 class MainFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
 
-    private val viewModel: MainViewModel by activityViewModels()
-
-    private val mainAdapter by lazy {
-        MainAdapter(onClickMain = onClickMain)
-    }
+    private val detailsLectoryCategoriesViewModel: DetailsLectoryCategoriesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,22 +28,25 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View = FragmentMainBinding.inflate(inflater, container, false).apply {
         binding = this
-        initAdapter()
+        loadMainData()
+        detailsLectoryCategoriesViewModel.getDetailsLectoryCategories()
     }.root
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel.loadCategoriesLectory()
-    }
-
-    private fun initAdapter() {
-        binding.rvMainCategoryMain.adapter = mainAdapter
-        mainAdapter.submitList(getMainCategories())
+    private fun loadMainData() {
+        val adapter = MainAdapter(onClickMain = onClickMain)
+        val data = mutableListOf<MainItem>()
+        data.add(MainItem.MainTitle)
+        data.add(MainItem.MainTip)
+        data.addAll(getMainCategories().map { main ->
+            MainItem.MainWrap(main)
+        })
+        binding.rvMainCategory.adapter = adapter
+        adapter.submitList(data)
     }
 
     private val onClickMain: (Int) -> Unit = { type ->
         if (type == 1) {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToCategoriesFragment())
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToLectoryCategoriesFragment())
         } else if (type == 2) {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToTestCategoriesFragment())
         }

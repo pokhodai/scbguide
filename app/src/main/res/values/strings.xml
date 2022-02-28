@@ -10,6 +10,7 @@
     <string name="main.tipTitle">Совет по изучению устройств</string>
     <string name="main.tipSubTitle">По очередности изучай все темы. Когда все темы будут изучены проверь свои знания на тестах, повышай уровень сложности по мере исчезновения ошибок!</string>
     <string name="main.tip">%s тем</string>
+    <string name="main.level">%s уровней</string>
 
     <!-- Test Screen-->
     <string name="test.question">%s вопросов</string>

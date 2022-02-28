@@ -52,6 +52,4 @@ class DetailsCategoryViewPagerAdapter
         override fun areItemsTheSame(oldItem: DetailCategory, newItem: DetailCategory): Boolean { return oldItem.id == newItem.id }
         override fun areContentsTheSame(oldItem: DetailCategory, newItem: DetailCategory): Boolean { return oldItem == newItem }
     }
-
-
 }
