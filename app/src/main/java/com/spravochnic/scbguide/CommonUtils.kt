@@ -28,7 +28,7 @@ fun getOtherUriForBackendImagePath(imagePath: String?): Uri {
 
 fun getDefaultShimmer(context: Context): Drawable {
     val shimmer = Shimmer.ColorHighlightBuilder().setBaseColor(
-        ContextCompat.getColor(context, R.color.main_blue)
+        ContextCompat.getColor(context, R.color.main_screen_color)
     ).setHighlightColor(
         ContextCompat.getColor(context, R.color.main_screen_color)
     ).setDuration(1000)

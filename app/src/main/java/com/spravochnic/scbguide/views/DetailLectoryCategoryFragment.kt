@@ -24,7 +24,7 @@ class DetailLectoryCategoryFragment : Fragment() {
     private val detailsLectoryCategoriesViewModel: DetailsLectoryCategoriesViewModel by activityViewModels()
 
     private val detailsCategoryAdapter by lazy {
-        DetailsCategoryViewPagerAdapter()
+        DetailsCategoryViewPagerAdapter(onClickSeeAll = onClickSeeAll)
     }
 
     private val arg: DetailLectoryCategoryFragmentArgs by navArgs()
@@ -50,11 +50,12 @@ class DetailLectoryCategoryFragment : Fragment() {
     }
 
     private fun setToolbarTitle() {
-        binding.toolbar.title = detailsLectoryCategoriesViewModel.detailCategory.value?.firstOrNull{it.type == arg.type}?.name
+        binding.toolbar.title = arg.name
     }
 
     private fun setAdapter() {
         binding.vpDetail.adapter = detailsCategoryAdapter
+        binding.vpDetail.offscreenPageLimit = 3
     }
 
     private fun setObservers() {
@@ -96,5 +97,9 @@ class DetailLectoryCategoryFragment : Fragment() {
             }
             detailsCategoryAdapter.submitList(detailList)
         }
+    }
+
+    private val onClickSeeAll:(String) -> Unit = {name ->
+        findNavController().navigate(DetailLectoryCategoryFragmentDirections.actionDetailsCategoriesFragmentToDetailLectoryFragment(name = name))
     }
 }

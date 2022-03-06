@@ -10,7 +10,7 @@ import com.spravochnic.scbguide.databinding.ViewCategoryBinding
 import com.spravochnic.scbguide.models.Categories
 
 class CategoriesAdapter(
-    private val onClickCategory: (String) -> Unit = {},
+    private val onClickCategory: (String, String) -> Unit = { type: String, name: String -> },
 ) : ListAdapter<Categories, CategoriesAdapter.CategoryViewHolder>(CategoriesDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
@@ -25,7 +25,7 @@ class CategoriesAdapter(
         private val binding: ViewCategoryBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Categories, onClickCategory: (String) -> Unit) {
+        fun bind(item: Categories, onClickCategory: (String, String) -> Unit) {
             binding.apply {
                 tvNameCategory.text = item.name
                 tvTopicsMain.text = root.context.getString(
@@ -34,7 +34,7 @@ class CategoriesAdapter(
                 )
                 ivIconCategory.setImageResource(item.icon)
                 root.setOnClickListener {
-                    onClickCategory(item.type)
+                    onClickCategory(item.type, item.name)
                 }
             }
         }

@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.spravochnic.scbguide.DefaultNetworkEventObserver
 import com.spravochnic.scbguide.R
+import com.spravochnic.scbguide.State
 import com.spravochnic.scbguide.adapters.MainAdapter
 import com.spravochnic.scbguide.adapters.MainItem
 import com.spravochnic.scbguide.databinding.FragmentMainBinding
@@ -22,6 +24,8 @@ class MainFragment : Fragment() {
 
     private val detailsLectoryCategoriesViewModel: DetailsLectoryCategoriesViewModel by activityViewModels()
 
+    private lateinit var onDetailCategory: DefaultNetworkEventObserver
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,8 +33,46 @@ class MainFragment : Fragment() {
     ): View = FragmentMainBinding.inflate(inflater, container, false).apply {
         binding = this
         loadMainData()
-        detailsLectoryCategoriesViewModel.getDetailsLectoryCategories()
+        initializeObservers()
+        setObservers()
+        checkIsDataLoaded()
     }.root
+
+    private fun initializeObservers() {
+        onDetailCategory = DefaultNetworkEventObserver(
+            anchorView = binding.root,
+            doOnLoading = {
+                hideMainScreen()
+            },
+            doOnSuccess = {
+                showProgress()
+            }
+        )
+    }
+
+    private fun showProgress() {
+        binding.run {
+            progress.alpha = 0f
+            rvMainCategory.visibility = View.VISIBLE
+        }
+    }
+
+    private fun hideMainScreen() {
+        binding.run {
+            progress.animate().alpha(1f)
+            rvMainCategory.visibility = View.GONE
+        }
+    }
+
+    private fun setObservers() {
+        detailsLectoryCategoriesViewModel.detailCategoryResult.observe(viewLifecycleOwner, onDetailCategory)
+    }
+
+    private fun checkIsDataLoaded() {
+        detailsLectoryCategoriesViewModel.run {
+            if (detailCategoryResult.value?.peekContent() != State.SUCCESS) getDetailsLectoryCategories()
+        }
+    }
 
     private fun loadMainData() {
         val adapter = MainAdapter(onClickMain = onClickMain)

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@drawable/background_bottom_sheet">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/DarkBold20TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin27"
+            android:layout_marginTop="@dimen/margin11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Входной светофор" />
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="@dimen/margin17"
+            android:layerType="software"
+            android:src="@drawable/dotted"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/OrangeBold14TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin26"
+            android:layout_marginTop="@dimen/margin16"
+            android:text="@string/detailsCategories.description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/BlackDarkNormal12TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin25"
+            android:layout_marginTop="@dimen/margin5"
+            tools:text="     Оповещение пешеходов и автомобилей о приближении поезда к охраняемому (регулируемому) или неохраняемому (нерегулируемому) железнодорожному переезду с помощью световых и звуковых сигналов.
+Оповещение пешеходов и автомобилей о приближении поезда к охраняемому (регулируемому) или неохраняемому (нерегулируемому) железнодорожному переезду с помощью световых и звуковых сигналов. Оповещение пешеходов и автомобилей о приближении поезда к охраняемому (регулируемому) или неохраняемому (нерегулируемому) железнодорожному переезду с помощью световых и звуковых сигналов"
+            android:layout_marginBottom="@dimen/margin15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

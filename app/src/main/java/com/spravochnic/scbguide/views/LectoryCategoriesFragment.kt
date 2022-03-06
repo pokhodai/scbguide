@@ -37,7 +37,7 @@ class LectoryCategoriesFragment : Fragment() {
         }
     }
 
-    private val onClickCategory: (String) -> Unit = { type ->
-        findNavController().navigate(LectoryCategoriesFragmentDirections.actionCategoriesFragmentToDetailsCategoriesFragment(type = type))
+    private val onClickCategory: (String, String) -> Unit = { type, name ->
+        findNavController().navigate(LectoryCategoriesFragmentDirections.actionCategoriesFragmentToDetailsCategoriesFragment(type = type, name = name))
     }
 }

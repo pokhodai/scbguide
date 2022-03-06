@@ -6,13 +6,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.spravochnic.scbguide.databinding.ViewDetailCategoryBinding
-import com.spravochnic.scbguide.databinding.ViewMainBinding
 import com.spravochnic.scbguide.glideOtherUrl
 import com.spravochnic.scbguide.models.DetailCategory
-import com.spravochnic.scbguide.models.Main
 import com.spravochnic.scbguide.setCutText
 
-class DetailsCategoryViewPagerAdapter
+class DetailsCategoryViewPagerAdapter(private val onClickSeeAll:(String) -> Unit = {})
     : ListAdapter<DetailCategory, DetailsCategoryViewPagerAdapter.DetailsCategoryViewHolder>(DetailsCategoryDiffUtilCallback())
 {
 
@@ -21,18 +19,21 @@ class DetailsCategoryViewPagerAdapter
     }
 
     override fun onBindViewHolder(holder: DetailsCategoryViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onClickSeeAll)
     }
 
     class DetailsCategoryViewHolder(
         private val binding: ViewDetailCategoryBinding
     ): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: DetailCategory) {
+        fun bind(item: DetailCategory, onClickSeeAll: (String) -> Unit) {
             binding.apply {
                 tvTitle.text = item.name
                 ivDetails.glideOtherUrl(item.image)
                 tvDescription.setCutText(item.description)
+                mbSeeAll.setOnClickListener {
+                    onClickSeeAll(item.name)
+                }
             }
         }
 

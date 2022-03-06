@@ -2,6 +2,7 @@
 <resources>
 
     <!-- Margin-->
+    <dimen name="margin4">4dp</dimen>
     <dimen name="margin5">5dp</dimen>
     <dimen name="margin6">6dp</dimen>
     <dimen name="margin10">10dp</dimen>
@@ -17,6 +18,8 @@
     <dimen name="margin22">22dp</dimen>
     <dimen name="margin23">23dp</dimen>
     <dimen name="margin25">25dp</dimen>
+    <dimen name="margin26">26dp</dimen>
+    <dimen name="margin27">27dp</dimen>
     <dimen name="margin28">28dp</dimen>
     <dimen name="margin30">30dp</dimen>
     <dimen name="margin33">33dp</dimen>
@@ -34,6 +37,7 @@
     <dimen name="corner14">14dp</dimen>
     <dimen name="corner15">15dp</dimen>
     <dimen name="corner20">20dp</dimen>
+    <dimen name="corner24">24dp</dimen>
 
     <!-- Size-->
     <dimen name="size15">15sp</dimen>

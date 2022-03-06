@@ -36,6 +36,13 @@
         <item name="fontWeight">700</item>
     </style>
 
+    <style name="BaseDarkNormalTextStyle">
+        <item name="lineHeight">22sp</item>
+        <item name="android:textColor">@color/main_dark</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontWeight">700</item>
+    </style>
+
     <style name="BaseBlackDarkNormalTextStyle">
         <item name="android:textColor">@color/dark_171E33</item>
         <item name="android:textStyle">normal</item>
@@ -123,6 +130,22 @@
 
     <style name="BlackDarkNormal12TextStyle" parent="BaseBlackDarkNormalTextStyle">
         <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="BlackDarkNormal13TextStyle" parent="BaseBlackDarkNormalTextStyle">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="BlackDarkNormal20TextStyle" parent="BaseBlackDarkNormalTextStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="DarkBold20TextStyle" parent="BaseDarkBoldTextStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="DarkNormal13TextStyle" parent="BaseDarkNormalTextStyle">
+        <item name="android:textSize">13sp</item>
     </style>
 
 </resources>
